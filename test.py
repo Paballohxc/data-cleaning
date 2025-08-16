@@ -6,14 +6,14 @@ df = pd.read_csv("dirty_sales_data.csv")
 # Print the whole dataset
 print(df)
 
-# 🔁 Step 1: Remove duplicate rows
+# Remove duplicate rows
 df = df.drop_duplicates()
 print("\nAfter removing duplicates:\n", df)
 
-# 🔎 Step 2: Check for missing values
+#Check for missing values
 print("\nMissing values:\n", df.isnull().sum())
 
-# 🧹 Step 3: Impute or remove missing data
+# Impute or remove missing data
 
 # Fill missing 'Category' with "Unknown"
 df['Category'] = df['Category'].fillna("Unknown")
@@ -34,4 +34,5 @@ df = df.dropna(subset=['Product'])
 df.to_csv("cleaned_sales_data.csv", index=False)
 
 # ✅ Show cleaned data
+
 print("\nCleaned Data:\n", df)
